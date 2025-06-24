@@ -1,0 +1,153 @@
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quote Generator</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      h1 {
+        display: flex;
+        justify-content: center;
+        color: rgb(143, 139, 41);
+      }
+      body {
+        background-color: rgb(224, 227, 200);
+      }
+
+      button {
+        background-color: cadetblue;
+        color: whitesmoke;
+        width: 40vh;
+        height: 10vh;
+        font-size: 2em;
+        margin-left: 40%;
+        border: none;
+        border-radius: 20px;
+      }
+      button:hover {
+        cursor: grab;
+        color: whitesmoke;
+        background-color: rgb(143, 139, 41);
+        transform: scale(1.1);
+        transition: 1.1s;
+      }
+      p {
+        border: none;
+        border-radius: 50px;
+        box-shadow: 2px 2px 20px black;
+        width: 90%;
+        height: 20vh;
+        background-color: whitesmoke;
+        font-size: 20px;
+        padding: 50px;
+        margin: 5%;
+        color: rgb(17, 85, 131);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Quote Generator</h1>
+
+    <p id="Quote">Click "Generate" to view a quote</p>
+
+    <button onclick="QuoteGenerator()">Generate</button>
+
+   <script>
+  /* 
+      const Quote = document.getElementById("Quote");
+
+      function QuoteGenerator() {
+        fetch("https://dummyjson.com/quotes")
+          .then((res) => res.json())
+
+          .then((data) => {
+            num = data.quotes.length;
+            const value = Math.floor(Math.random() * num);
+
+            Quote.innerHTML = data.quotes[value].quote;
+          })
+
+          .catch((error) => {
+            Quote.innerHTML = "Failed to fetch quote.";
+            Quote.style.color = "red";
+
+            console.error("Error fetching quotes:", error);
+          });
+      }
+  */
+// ---------------------------------------------------------
+
+
+
+
+
+
+
+      const Quote = document.getElementById("Quote");
+      let allQuotes=[];
+      const usedIndexes=new Set();
+
+      async function fetchQuotes(){
+        try{
+            const res=await   fetch("https://dummyjson.com/quotes");
+            const data=await res.json();
+            allQuotes=data.quotes;
+
+        }catch(error){
+            Quote.innerHTML="Failde to fetch quotes";
+            Quote.style.color="red"
+            console.error("Error fetching quotes",errror)
+        }
+      }
+
+      function QuoteGenerator(){
+        if(allQuotes.length===0){
+            Quote.innerHTML="Quotes are still loading .Please wait..."
+            return;
+        }
+
+        let index;
+        do{
+            index=Math.floor(Math.random()*allQuotes.length)
+        }while(usedIndexes.has(index));
+
+
+        usedIndexes.add(index);
+        Quote.innerHTML=allQuotes[index].quote;
+        Quote.style.color="rgb(17,85,131)"
+  
+
+      }
+
+      fetchQuotes();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html> 
+
+
+
+
+

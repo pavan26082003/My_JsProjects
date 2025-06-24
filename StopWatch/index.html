@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+
+    <style>
+        h1{
+            display: flex;
+justify-content: center;
+        }
+        body{
+            background-color: grey;
+        }
+        #display{
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 25%;
+            background-color: aliceblue;
+            border: none;
+            border-radius:10px;
+        }
+        #button{
+            margin:55px ;
+            margin-left: 25%;
+
+        }
+        button{
+            margin: 25px;
+            width: 15%;
+            height: 10vh;
+        }
+        
+        #start{
+            background-color: green;
+            border: none;
+            border-radius: 10px;
+            
+
+        }
+        #stop{
+            background-color: red;
+            border: none;
+            border-radius: 10px;
+
+        }
+        #reset{
+            background-color: orange;
+            border: none;
+            border-radius: 10px;
+
+
+
+        }
+
+
+
+    </style>
+  </head>
+  <body>
+
+    <h1>Stopwatch</h1>
+    <div id="display">
+
+        <h1 id="time">00:00</h1>
+    </div>
+
+    <div id="button">
+        <button id="start" onclick="start()">Start</button>
+        <button id="stop" onclick="stop()">Stop</button>
+        <button id="reset" onclick="reset()">Reset</button>
+
+    </div>
+
+    <script src="main.js">
+    //   let secondsElapsed = 0;
+    //   interval = null;
+    //   time = document.getElementById("time");
+
+    //   function padstart(value) {
+    //     return String(value).padStart(2, "0");
+    //   }
+
+    //   function setTime() {
+    //     const minutes = Math.floor(secondsElapsed / 60);
+    //     const seconds = secondsElapsed % 60;
+
+    //     time.innerHTML = `${padstart(minutes)}:${padstart(seconds)}`;
+    //   }
+
+    //   function timer() {
+    //     secondsElapsed++;
+    //     setTime();
+    //   }
+
+    //   function start() {
+    //     if (interval) stop();
+    //     interval = setInterval(timer, 1000);
+    //   }
+
+    //   function stop() {
+    //     clearInterval(interval);
+    //     interval=null
+    //   }
+
+    //   function reset() {
+    //     stop();
+    //     secondsElapsed = 0;
+    //     setTime();
+    //   }
+    //   setTime()
+    // </script>
+  </body>
+</html>

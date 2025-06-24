@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Flipper</title>
+    <link rel="stylesheet" href="main.js">
+
+    <style>
+        button{
+
+            width: 100px;
+            height: 6vh;
+            margin: 5px;
+
+            border-radius: 100px;
+            border: none;
+            box-shadow: 2px 3px  4px grey ;
+            
+        }
+        button:hover{
+            transform: scale(1.1);
+            transition: 1s;
+
+        }
+        #green{
+            background-color: green;
+            color: white;
+        }
+        #blue{
+            background-color: blue;
+            color: white;
+        }
+        #orange{
+            background-color: orange;
+        }
+        #red{
+            background-color: red;
+        }
+
+        #random{
+            background-color: black;
+            color: whitesmoke;
+        }
+
+
+
+
+
+
+    </style>
+  </head>
+  <body>
+    <h1>Color Flipper</h1>
+ 
+
+
+    <button onclick="setColor('green')" id="green">Green</button>
+    <button onclick="setColor('blue') " id="blue">Blue</button>
+    <button onclick="setColor('orange')" id="orange">Orange</button>
+    <button onclick="setColor('red')" id="red">Red</button>
+    <button onclick="random('')" id="random">Random</button>
+
+
+
+
+
+    <script>
+        const body=document.getElementsByTagName("body")[0];
+        // body.style.background="name"
+
+
+        function setColor(name){
+            body.style.backgroundColor=name
+        }
+
+        function random(){
+            
+            const red=Math.round(Math.random()*255)
+            const green=Math.round(Math.random()*255)
+            const blue=Math.round(Math.random()*255)
+
+            const color=`rgb(${red},${green},${blue})`
+
+            body.style.backgroundColor=color
+
+
+        }
+
+
+
+    </script>
+  </body>
+</html>

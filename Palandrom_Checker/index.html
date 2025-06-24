@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Palindrome_Checker</title>
+  </head>
+  <style>
+    #input {
+        background-color: #2026;
+        height: 5vh;
+        width: 50%;
+        color: rgb(39, 71, 147);
+        background-color: white;
+        border: none;
+        border-radius: 15px;
+        margin: 5%;
+        font-size: 1.2rem;
+        
+
+    }
+    h1{
+       display:flex;
+       justify-content: center;
+       transform: scale(1.5);
+       margin: 5%;
+
+    }
+    button{
+        width: 20%;
+        height: 7vh;
+         border: none;
+         color: orange;
+        border-radius: 15px;
+        font-size: 1.3rem;
+        background-color: rgba(8, 72, 66, 0.267);
+    }
+    button:hover{
+         transform: scale(1.1);
+         transition: 0.5s;
+
+
+    }
+    body{
+        
+        background-color: #8016;
+    }
+  </style>
+  <body>
+    <h1>Palindrome Checker</h1>
+
+    <input id="input" type="text" placeholder="Enter Palindrome" />
+    <button onclick="check()">Check</button>
+
+    
+    <h3 id="name"></h3>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script>
+      /* dad it is palandome  */
+
+      const input = document.getElementById("input");
+
+        const value = input.value;
+
+
+      function reverseString(str) {
+
+        return str.split("").reverse().join("")
+
+      }
+      reverseString("value")
+
+
+      function check() {
+        const value = input.value;
+        const reverse=reverseString(value)
+
+
+
+        if (value===reverse){
+
+            alert(`${value}, P A L I N D R O M E` )
+        }
+        else{
+            alert('not a palindrome')
+        }
+
+      }
+
+    
+
+    </script>
+  </body>
+</html>
